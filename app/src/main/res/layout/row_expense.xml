@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="evm"
+                  type="io.kustard.expenses.viewmodel.ExpenseViewModel"/>
+    </data>
+    <androidx.cardview.widget.CardView
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="3dp"
+            card_view:cardUseCompatPadding="true">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+            <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Nuevo evento de desarrollo"
+                    android:layout_marginBottom="2dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@{evm.getTitle()}"/>
+            <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text=".dfg"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="@{evm.getDescription()}"/>
+            <TextView
+                    android:id="@+id/excerpt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text=".dgfg"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="14sp"
+                    android:text="@{Integer.toString(evm.getAmount()) }"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
