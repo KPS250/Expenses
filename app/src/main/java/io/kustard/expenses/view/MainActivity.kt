@@ -52,11 +52,7 @@ class MainActivity : AppCompatActivity() {
         read()
     }
 
-    override fun onRestart() {
-        read()
-        super.onRestart()
 
-    }
 
     fun read(){
         FirebaseHelper.getExpenses(object : ExpenseReadCallback {
